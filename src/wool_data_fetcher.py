@@ -22,7 +22,7 @@ class WoolDataFetcher:
     def __get_all_article_links(
         self, tag: str = "h3", class_name: str = "productlist-title"
     ) -> List[str]:
-        # print("get_all_article_links")
+        print("get_all_article_links")
         all_links = []
         page_count = 1
 
@@ -36,8 +36,8 @@ class WoolDataFetcher:
             or len(all_links) == 0
         ):
             all_links += temp_links
+            print("page", page_count)
             page_count += 1
-            # print(page_count)
 
         return all_links
 
@@ -78,7 +78,7 @@ class WoolDataFetcher:
             articles_data[title] = article_data
 
             counter += 1
-            # print(f"{counter}/{len(self.__article_urls)}")
+            print(f"{counter}/{len(self.__article_urls)}")
 
         return articles_data
 
